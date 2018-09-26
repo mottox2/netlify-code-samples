@@ -1,4 +1,2 @@
-/posts
-  Content-Type: application/json
-/posts/1
+/posts/*
   Content-Type: application/json
