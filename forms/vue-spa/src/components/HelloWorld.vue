@@ -1,32 +1,36 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p>
+        <label>名前: <input type="text" name="name" required /></label>
+      </p>
+      <p>
+        <label>メールアドレス: <input type="email" name="email" required /></label>
+      </p>
+      <p>
+        <label>問い合わせ内容: <select name="reason" required>
+          <option value="開発の依頼">開発の依頼</option>
+          <option value="顧問・アドバイザーの依頼">顧問・アドバイザーの依頼</option>
+          <option value="ワークショップ・研修の依頼">ワークショップ・研修の依頼</option>
+          <option value="取材・イベント登壇の依頼">取材・イベント登壇の依頼</option>
+          <option value="その他">その他</option>
+          <option value="etc">etc</option>
+        </select></label>
+      </p>
+      <p>
+        <label>本文: <textarea name="message"></textarea></label>
+      </p>
+      <p>
+        <button type="submit">送信</button>
+      </p>
+    </form>
+
   </div>
 </template>
 
@@ -41,18 +45,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+form {
+  text-align: left;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+input, select, textarea {
+  box-sizing: border-box;
+  display: block;
+  margin: 4px 0;
+  padding: 4px;
+  width: 100%;
+}
+
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+button[type=submit] {
+  width: 100%;
+  padding: 4px;
 }
 </style>
