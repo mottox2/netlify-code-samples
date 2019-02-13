@@ -11,6 +11,15 @@
     <noscript>
       <strong>We're sorry but vue-spa doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+
+    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" required />
+      <input type="email" name="email" required />
+      <select name="reason" required></select>
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
