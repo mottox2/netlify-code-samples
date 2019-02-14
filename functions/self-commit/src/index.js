@@ -12,16 +12,20 @@ export const handler = async (event, context, callback) => {
   const parsedBody = JSON.parse(event.body)
   const timestamp = moment().format('YYYYMMDDHHmmss')
 
+  console.log(parsedBody)
+
   const res = await octokit.repos.createFile({
     owner: 'mottox2',
     repo: 'netlify-code-samples',
-    path: `/functions/self-commit/data/${timestamp}.yaml`,
+    path: `functions/self-commit/data/${timestamp}.yaml`,
     message: `Create ${timestamp}.yaml from user inout`,
-    content: yaml.dump(parsedBody)
+    content: new Buffer(yaml.dump(parsedBody)).toString('base64')
   })
+
+  console.log(res.data)
 
   callback(null, {
     statusCode: 200,
-    body: res.data.commit.url
+    body: res.data.commit.html_url
   })
 }
