@@ -1,0 +1,17 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "netlify-lambda build src/",
+    "serve": "netlify-lambda serve src/"
+  },
+  "dependencies": {
+    "@octokit/rest": "^16.15.0",
+    "@types/node": "^11.9.3",
+    "js-yaml": "^3.12.1",
+    "moment": "^2.24.0",
+    "netlify-lambda": "^1.3.3"
+  }
+}
