@@ -1,5 +1,5 @@
 {
-  "name": "basic",
+  "name": "use-library",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -8,6 +8,7 @@
     "serve": "netlify-lambda serve src/"
   },
   "dependencies": {
+    "moment": "^2.24.0",
     "netlify-lambda": "^1.4.3"
   }
 }
