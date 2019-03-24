@@ -1,0 +1,13 @@
+{
+  "name": "rewrite-function",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "netlify-lambda": "^1.4.3"
+  },
+  "scripts": {
+    "build": "netlify-lambda build src/",
+    "serve": "netlify-lambda serve src/"
+  }
+}
